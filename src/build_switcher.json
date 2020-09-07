@@ -1,0 +1,12 @@
+{
+    "KPlugin": {
+        "Description": "Build_Switcher",
+        "Id": "build_switcher",
+        "Name": "Build_Switcher",
+        "ServiceTypes": [
+            "KDevelop/Plugin"
+        ]
+    },
+    "X-KDevelop-Category": "Global",
+    "X-KDevelop-Mode": "GUI"
+}
