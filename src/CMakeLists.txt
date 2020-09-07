@@ -16,3 +16,8 @@ kdevplatform_add_plugin(build_switcher
 target_link_libraries(build_switcher
     KDev::Interfaces
 )
+
+target_include_directories(build_switcher
+PRIVATE
+    ${CMAKE_BINARY_DIR}
+)
