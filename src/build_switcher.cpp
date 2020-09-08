@@ -5,11 +5,15 @@
 
 //KF5
 #include <KPluginFactory>
+#include <KLocalizedString>
 
 //QT5
 #include <QAction>
 #include <QDebug>
 #include <QMenu>
+
+//Build_Switcher
+#include "tool_widget.hpp"
 
 K_PLUGIN_FACTORY_WITH_JSON(Build_SwitcherFactory, "build_switcher.json", registerPlugin<Build_Switcher>(); )
 
@@ -18,8 +22,8 @@ Build_Switcher::Build_Switcher(QObject *parent, const QVariantList& args)
 {
     Q_UNUSED(args);
     
-    //qCDebug(PLUGIN_BUILD_SWITCHER) << "Hello world, my plugin is loaded!";
-    
+    auto* toolView = new ToolWidgetFactory();
+    core()->uiController()->addToolView(QStringLiteral("Switcher"), toolView);
 }
 
 KDevelop::ContextMenuExtension Build_Switcher::contextMenuExtension(KDevelop::Context* context, QWidget* parent) {

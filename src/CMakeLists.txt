@@ -1,5 +1,6 @@
 set(build_switcher_SRCS
     build_switcher.cpp
+    tool_widget.cpp
 )
 
 ecm_qt_declare_logging_category(build_switcher_SRCS

@@ -2,6 +2,7 @@
 #define BUILD_SWITCHER_H
 
 #include <interfaces/iplugin.h>
+#include <interfaces/icore.h>
 #include <kdevplatform/interfaces/contextmenuextension.h>
 
 class Build_Switcher : public KDevelop::IPlugin
