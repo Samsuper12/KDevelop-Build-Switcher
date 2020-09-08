@@ -29,9 +29,11 @@ KDevelop::ContextMenuExtension Build_Switcher::contextMenuExtension(KDevelop::Co
     auto* actionMenu = new QMenu;
     actionMenu->setTitle("QMenu");
     
+    auto* seperator = new QAction();
     auto* actionFirst = new QAction("First checkable");
     auto* actionSecond = new QAction("Second checkable");
     
+    seperator->setSeparator(true);
     actionFirst->setCheckable(true);
     actionSecond->setCheckable(true);
     
@@ -39,6 +41,7 @@ KDevelop::ContextMenuExtension Build_Switcher::contextMenuExtension(KDevelop::Co
     actionMenu->addAction(actionSecond);
     
     ext.addAction(ext.ExtensionGroup, actionMenu->menuAction());
+    ext.addAction(ext.ExtensionGroup, seperator);
     
     connect(actionFirst, &QAction::toggled, this, [&](bool checked) {
         qDebug() << "First action is: " << checked;
